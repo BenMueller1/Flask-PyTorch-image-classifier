@@ -1,0 +1,13 @@
+.navbar-wrapper {
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+}
+
+.title {
+    margin: 0px;
+}
+
+.list-group-item {
+    padding: 3px 5px 3px 5px;
+}

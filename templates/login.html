@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="../static/index.css">
+{% endblock %}
+
+{% block script %}
+    <script src="static/index.js"></script>
+{% endblock %}
+
+{% block body %}
+    <form id="login_form" method="POST" action="/login">
+        <div class="form_wrapper">
+            <input id="name_input" name="name" type="text" placeholder="username">
+            <input id="password_input" name="password" type="password", placeholder="password">
+            <input id="login_btn" type="submit" value="Log In">
+        </div>
+    </form>
+
+    <p>Don't have an account? <a href="../signup">Sign up here.</a></p>
+{% endblock %}

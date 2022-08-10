@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="../static/index.css">
+{% endblock %}
+
+{% block script %}
+    <script src="static/index.js"></script>
+{% endblock %}
+
+{% block body %}
+    {% if current_user.is_authenticated %}
+        <form id="image_submission_form" method="POST" action="/classifyImage" enctype="multipart/form-data">
+            <div class="form_wrapper">
+                <input id="image_file" type="file" name="image">
+                <input id="predict_button" type="submit" value="Predict">
+            </div>
+        </form>
+    {% else %}
+        <p>Please login (or sign up) to make predictions.</p>
+    {% endif %}    
+
+    <br><br><br><br><br><br><br>
+    <p> Image classification model was implemented using PyTorch and trained on the <a href="https://www.cs.toronto.edu/~kriz/cifar.html" target="_blank">CIFAR-10</a> Dataset, visit <a href="/about">here</a> to learn more about the process.</p>
+{% endblock %}

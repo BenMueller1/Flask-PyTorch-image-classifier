@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="../static/index.css">
+{% endblock %}
+
+{% block script %}
+    <script src="static/index.js"></script>
+{% endblock %}
+
+
+{% block body %}
+    <!-- enctype="multipart/form-data"  DO I NEED THIS IN THE FORM ELEMENT? -->
+    <form id="signup_form" method="POST" action="/signup">
+        <div class="form_wrapper">
+            <input id="name_input" name="name" type="text" placeholder="username">
+            <input id="password_input" name="password" type="password", placeholder="password">
+            <input id="signup_btn" type="submit" value="Sign up">
+        </div>
+    </form>
+{% endblock %}

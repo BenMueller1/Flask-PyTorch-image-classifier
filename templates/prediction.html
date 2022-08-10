@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block script %}
+    <script src=""></script>
+{% endblock %}
+
+{% block body %}
+    <h5> Your image was classified as a {{ prediction }} with {{ certainty }}% certainty</h5>
+    <a href="{{url_for('index')}}">predict again</a>, 
+    <a href="{{url_for('predictions')}}">view all predictions</a>
+    <br><br><br><br><br><br><br>
+    <p> Image classification model was implemented using PyTorch and trained on the <a href="https://www.cs.toronto.edu/~kriz/cifar.html">CIFAR-10</a> Dataset, visit <a href="/about">here</a> to learn more about the process.</p>
+{% endblock %}

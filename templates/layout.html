@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="../static/layout.css">
+        {% block stylesheet %}
+        {% endblock %}
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="navbar-wrapper d-flex align-items-center">
+                <div class="float-left">
+                    <h3>
+                        <a href="/">Image Classifier</a>
+                    </h3>
+                </div>
+                <div class="float-right">
+                    <ul class="list-group list-group-flush"> <!-- used to be navbar-nav mr-auto -->
+                        <li class="list-group-item bg-light">  <!-- used to be nav-item -->
+                            <a href="/">predict</a>
+                        </li>
+                        <li class="list-group-item bg-light">
+                            <a href="/about">details</a>
+                        </li>
+                        <li class="list-group-item bg-light">
+                            <a href="/predictions">all predictions</a>
+                        </li>
+
+                        {% if current_user.is_authenticated %}
+                            <li class="list-group-item bg-light">
+                                <a href="/yourPredictions">your predictions</a>
+                            </li>
+                        {% endif %}
+
+                        <li class="list-group-item bg-light">
+                            <a href="/ben">hi :)</a>
+                        </li>
+
+                        {% if current_user.is_authenticated %}
+                            <li class="list-group-item bg-light">
+                                <a href="/logout">logout</a>
+                            </li>
+                        {% else %}
+                            <li class="list-group-item bg-light">
+                                <a href="/login">login</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        {% block script %}
+        {% endblock %}
+        
+        {% for mesg in get_flashed_messages() %}
+            <h5>{{ mesg }}</h5>
+        {% endfor %}
+        
+        <div id="body-wrapper" class="d-flex flex-column align-items-center">
+            {% block body %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

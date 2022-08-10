@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block script %}
+    {% if all_users %}
+        <script src="static/predictions.js"></script>
+    {% else %}
+        <script src="static/yourPredictions.js"></script>
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    <div id="predictions"></div>
+{% endblock %}
