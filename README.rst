@@ -1,1 +1,1 @@
-note: There's no commit history for this repo because most of the work was done in another one of my repos called "Flask TensorFlow image classifier"
+note: There's no commit history for this repo because most of the work was done in another one of my repos called "Flask TensorFlow image classifier," I copied it over and accidently didn't take the history with me, but this is the final working version.
